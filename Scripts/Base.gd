@@ -6,12 +6,14 @@ onready var nav = $"../Navigation"
 onready var timer = $Timer
 
 func _process(delta):
-	pass
 	if vida_base == 0:
 		get_tree().change_scene("res://Scenes/MenuPrincipal.tscn")
+	var pos = get_translation()
+	var cam = get_tree().get_root().get_camera()
+	var screenpos = cam.unproject_position(pos)
+	get_node("ControlBase").set_position(Vector2(screenpos.x -25 , screenpos.y -95 ) )
 
 func _on_enter(_body):
-		
 	if (_body.is_in_group("enemy")):
 		if vida_base > 10:
 			vida_base -= 10

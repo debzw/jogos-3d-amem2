@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://textures/marble 1/azul_1.tres" type="Material" id=1]
 [ext_resource path="res://Scripts/Base.gd" type="Script" id=2]
 [ext_resource path="res://Models/Base.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://Scripts/ControlBase.gd" type="Script" id=4]
 [ext_resource path="res://textures/madeira clara 1/madeira clara 1.tres" type="Material" id=5]
 
 [sub_resource type="ConcavePolygonShape" id=1]
@@ -28,4 +29,30 @@ shape = SubResource( 2 )
 mesh = ExtResource( 3 )
 material/0 = ExtResource( 5 )
 material/1 = ExtResource( 1 )
+
+[node name="ControlBase" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.1, 0.2 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="ControlBase"]
+margin_right = 500.0
+margin_bottom = 12.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lifebar" type="ColorRect" parent="ControlBase"]
+margin_left = 5.0
+margin_top = 2.0
+margin_right = 495.0
+margin_bottom = 10.0
+color = Color( 0.0705882, 0.141176, 0.733333, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="Area" to="." method="_on_enter"]
