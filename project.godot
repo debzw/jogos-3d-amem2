@@ -10,9 +10,14 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "KinematicBody",
-"class": "Enemy",
+"class": "EnemyExplosive",
 "language": "GDScript",
 "path": "res://Scripts/Enemy.gd"
+}, {
+"base": "KinematicBody",
+"class": "EnemyShooter",
+"language": "GDScript",
+"path": "res://Scripts/EnemyShooter.gd"
 }, {
 "base": "Node",
 "class": "Wave",
@@ -25,7 +30,8 @@ _global_script_classes=[ {
 "path": "res://Scripts/Main_scene.gd"
 } ]
 _global_script_class_icons={
-"Enemy": "",
+"EnemyExplosive": "",
+"EnemyShooter": "",
 "Wave": "",
 "Worldd": ""
 }
@@ -33,14 +39,18 @@ _global_script_class_icons={
 [application]
 
 config/name="Projeto_3D_2020 "
-run/main_scene="res://Scenes/Main_scene.tscn"
+run/main_scene="res://Scenes/MenuPrincipal.tscn"
 config/icon="res://Models/icon.png"
 config/macos_native_icon="res://Models/icon.png"
 config/windows_native_icon="res://Models/icon.png"
 
 [display]
 
+window/size/width=1280
+window/size/height=720
 window/size/always_on_top=true
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [input]
 
@@ -72,6 +82,11 @@ Up_W={
 Down_S={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+Esc={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"unicode":0,"echo":false,"script":null)
  ]
 }
 

@@ -25,15 +25,15 @@ antialiased = false
 font_path = "res://Fonts/dogica/dogica.ttf"
 
 [sub_resource type="DynamicFont" id=5]
-size = 8
+size = 10
 font_data = SubResource( 4 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 5 )
 
 [node name="hiroshima draw" type="Sprite" parent="."]
-position = Vector2( 525.633, 307.335 )
-scale = Vector2( 1.30853, 1.30853 )
+position = Vector2( 631.077, 355.3 )
+scale = Vector2( 1.55766, 1.55766 )
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -65,10 +65,10 @@ align = 1
 valign = 1
 
 [node name="quit" type="TextureButton" parent="."]
-margin_left = 728.0
-margin_top = 56.0
-margin_right = 848.0
-margin_bottom = 108.0
+margin_left = 920.0
+margin_top = 58.6697
+margin_right = 1040.0
+margin_bottom = 110.67
 rect_scale = Vector2( 1.70248, 1.70248 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 1 )
@@ -99,10 +99,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 664.0
-margin_top = 584.0
-margin_right = 1412.0
-margin_bottom = 616.0
+margin_left = 826.533
+margin_top = 693.699
+margin_right = 1574.53
+margin_bottom = 757.699
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.85098, 0.603922, 0.647059, 1 )
 text = "Made by: Débora Zum Winkel e Gustavo Freitas"

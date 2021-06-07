@@ -1,11 +1,12 @@
 extends KinematicBody
 
-class_name EnemyExplosive
+class_name EnemyShooter
 
 onready var nav = $"../../"
 onready var go_to = $"../../../Base" 
 onready var timer = $Timer
 onready var spawner = $"../"
+onready var rof_timer = $ROF
 
 var path = []
 var current_node = 0
@@ -18,15 +19,17 @@ var distance_z
 var distance_x
 var base_pos 
 var enemy_pos
+var can_shoot = false
 
 export var enemy_speed = 5
 export var life = 100
-
+export var bullet_speed = 7
+export var shoot_delay = 1000
 signal enemy_death_signal
 
+export(PackedScene) var BulletEnemy
 
 
-#Pegar o path
 func _ready():
 	enemy_pos = Vector2 (self.global_transform.origin[0], self.global_transform.origin[2])
 	print(enemy_pos)
@@ -34,8 +37,9 @@ func _ready():
 	var delay  = rand.randf_range(2.0, 3.0)
 	timer.set_wait_time(delay)
 	timer.start()
-	
-#sumir ao cdar dano da torre central
+	rof_timer.wait_time = shoot_delay / 1000.0
+	rof_timer.start()
+
 func dead():
 	if is_alive == true:
 		is_alive = false
@@ -43,14 +47,14 @@ func dead():
 		yield($AnimationPlayer, "animation_finished")
 		emit_signal("enemy_death_signal")
 		queue_free()
-		#("dead")
 
-#Seguir o path de ready
 func _physics_process(delta):
 	if has_path == true:
 		enemy_has_path()
 	if has_path == false:
 		random_path()
+	shoot()
+	_rotation()
 
 func _on_enter(_body):
 	if (_body.is_in_group("Base")):
@@ -65,7 +69,6 @@ func _on_Area_area_entered(area: Area):
 		if life == 0:
 			self.dead()
 			spawner.enemy_killed += 1 
-
 
 func random_path():
 	base_pos = Vector2 (go_to.global_transform.origin[0], go_to.global_transform.origin[2])
@@ -100,8 +103,6 @@ func random_path():
 			new_direction = Vector3 (distance_x, 0, 0)
 	move_and_slide(new_direction.normalized()*enemy_speed)
 		
-		
-	
 func enemy_has_path():
 	x = 0
 	if current_node< path.size() and has_path == true:
@@ -124,17 +125,18 @@ func _on_Timer_timeout():
 	timer.set_wait_time(delay)
 	timer.start()
 
+func shoot(): 
+	if can_shoot == true:
+		var new_bullet = BulletEnemy.instance()
+		new_bullet.global_transform = $Gun.global_transform
+		new_bullet.speed = bullet_speed
+		var scene_root = get_tree().get_root().get_children()[0]
+		scene_root.add_child(new_bullet)
+		can_shoot = false
+		rof_timer.start()
 
+func _on_ROF_timeout():
+	can_shoot = true
 
-
-
-#if slide_count > 0 :
-		#for count in range (slide_count):
-		#	var collision = get_slide_collision(count)
-		#	var collider = collision.collider
-		#	
-		#	if collider.name() == "Base":
-		#	#is_in_group("enemy"):
-		#	#name() == "Base":
-		#		print ("foi")"
-
+func _rotation():
+	rotation_degrees[1] += 2

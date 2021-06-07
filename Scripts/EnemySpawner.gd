@@ -21,7 +21,7 @@ func _ready():
 	waves = $Waves.get_children()
 	connect_to_attack_fase_signals(world)
 
-func connect_to_enemy_signals(enemy: Enemy):
+func connect_to_enemy_signals(enemy: EnemyExplosive):
 	enemy.connect("enemy_death_signal", self, "_on_Enemy_enemy_death_signal")
 	
 func connect_to_attack_fase_signals(world: Worldd):

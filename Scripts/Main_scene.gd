@@ -10,6 +10,7 @@ onready var free_area = $Navigation/Map/Area
 onready var build_button = $Botoes/Build_mode_button
 onready var button_wave = $Botoes/ButtonWave
 onready var money_text = $Botoes/Money_text
+onready var buttonmenu = $Botoes/Menu
 
 var menu = preload("res://Scenes/PopupMenu.tscn")
 var torreta = preload("res://Scenes/Torreta.tscn")
@@ -34,7 +35,12 @@ signal _on_world_attack_fase
 #UI de posicionar defesas
 func _physics_process(delta):
 	UIBuild()
-
+	if Input.is_action_just_pressed("Esc"):
+		if buttonmenu.visible == false:
+			buttonmenu.visible = true
+		else:
+			buttonmenu.visible = false
+			
 func UIBuild():
 	if build_menu == true:
 		if !in_menu:
@@ -145,3 +151,7 @@ func _on_ButtonWave_pressed():
 
 
 
+
+
+func _on_Menu_pressed():
+	get_tree().change_scene("res://Scenes/MenuPrincipal.tscn")
