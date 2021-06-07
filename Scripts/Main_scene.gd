@@ -4,7 +4,7 @@ class_name Worldd
 
 onready var ray = $Selection_UI/RayCast
 onready var map = $Navigation/Map
-onready var camera = $Camera
+onready var camera = $CameraUI/CameraUI2/Camera
 onready var selection_cube = $Selection_UI/MeshInstance
 onready var free_area = $Navigation/Map/Area
 onready var build_button = $Botoes/Build_mode_button

@@ -1,9 +1,9 @@
 extends StaticBody
 
 var vida_base = 100
-onready var enemy = $"../Navigation/EnemySpawner/Enemy"
+#var enemy = get_parent().get_child(Navigation).get_child(EnemySpawner).get_node("Enemy")
+#$"../Navigation/EnemySpawner/Enemy"
 onready var nav = $"../Navigation"
-onready var timer = $Timer
 
 func _process(delta):
 	if vida_base == 0:
