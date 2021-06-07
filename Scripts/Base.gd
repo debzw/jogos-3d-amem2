@@ -7,7 +7,7 @@ onready var timer = $Timer
 
 func _process(delta):
 	if vida_base == 0:
-		get_tree().change_scene("res://Scenes/MenuPrincipal.tscn")
+		get_tree().change_scene("res://Scenes/YouLost.tscn")
 	var pos = get_translation()
 	var cam = get_tree().get_root().get_camera()
 	var screenpos = cam.unproject_position(pos)
