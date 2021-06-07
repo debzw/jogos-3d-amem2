@@ -139,4 +139,4 @@ func _on_ROF_timeout():
 	can_shoot = true
 
 func _rotation():
-	rotation_degrees[1] += 2
+	rotation_degrees[1] += 3
