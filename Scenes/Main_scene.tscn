@@ -17,7 +17,7 @@
 [ext_resource path="res://Models/bottun_pressed.png" type="Texture" id=15]
 [ext_resource path="res://Models/bottun_hover.png" type="Texture" id=16]
 [ext_resource path="res://Models/bottun_normal.png" type="Texture" id=17]
-[ext_resource path="res://Models/money_icon.png" type="Texture" id=18]
+[ext_resource path="res://Models/PinkMoney.png" type="Texture" id=18]
 [ext_resource path="res://Scripts/CameraUI.gd" type="Script" id=19]
 [ext_resource path="res://Fonts/Upheveal/upheavtt.ttf" type="DynamicFontData" id=20]
 
@@ -185,7 +185,8 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Botoes/Money_text"]
-position = Vector2( -31.8311, 25.4382 )
+position = Vector2( -23.8311, 24.4382 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 18 )
 [connection signal="mouse_entered" from="Navigation/Map/Area" to="." method="_on_mouse_enter"]
 [connection signal="mouse_exited" from="Navigation/Map/Area" to="." method="_on_area_exited"]
