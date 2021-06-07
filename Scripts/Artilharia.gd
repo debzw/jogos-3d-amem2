@@ -1,6 +1,6 @@
 extends Spatial
 
-onready var camera = $"../../CameraUI/Camera"
+onready var camera = $"../../CameraUI/CameraUI2/Camera"
 onready var ray = $"../../Selection_UI/RayCast"
 onready var map = $"../../Navigation/Map"
 onready var button = $"../../Botoes/Artilharia"
