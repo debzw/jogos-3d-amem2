@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/HalfGround_tile.obj-a812bf63d93bcda2bf150840c23b262a.mesh"
+
+[deps]
+
+files=[ "res://.import/HalfGround_tile.obj-a812bf63d93bcda2bf150840c23b262a.mesh" ]
+
+source_file="res://Models/HalfGround_tile.obj"
+dest_files=[ "res://.import/HalfGround_tile.obj-a812bf63d93bcda2bf150840c23b262a.mesh", "res://.import/HalfGround_tile.obj-a812bf63d93bcda2bf150840c23b262a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

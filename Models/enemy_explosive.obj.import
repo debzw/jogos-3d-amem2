@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/enemy_explosive.obj-f8bdc4794faa50d3f93d1a987ae16b24.mesh"
+
+[deps]
+
+files=[ "res://.import/enemy_explosive.obj-f8bdc4794faa50d3f93d1a987ae16b24.mesh" ]
+
+source_file="res://Models/enemy_explosive.obj"
+dest_files=[ "res://.import/enemy_explosive.obj-f8bdc4794faa50d3f93d1a987ae16b24.mesh", "res://.import/enemy_explosive.obj-f8bdc4794faa50d3f93d1a987ae16b24.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

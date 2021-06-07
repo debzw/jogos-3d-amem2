@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Models/enemy_explosive.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Scripts/Enemy.gd" type="Script" id=2]
+[ext_resource path="res://Animations/Rotation.tres" type="Animation" id=3]
+[ext_resource path="res://Animations/Explosion.tres" type="Animation" id=4]
+[ext_resource path="res://textures/madeira escura 1/Madeira_escura.tres" type="Material" id=5]
+[ext_resource path="res://textures/bronze/Bronze.tres" type="Material" id=6]
+[ext_resource path="res://Scripts/Stats.gd" type="Script" id=7]
+
+[sub_resource type="SphereShape" id=1]
+
+[node name="Enemy" type="KinematicBody" groups=[
+"enemy",
+]]
+collision_layer = 4
+script = ExtResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = ExtResource( 6 )
+material/1 = ExtResource( 5 )
+material/2 = ExtResource( 5 )
+material/3 = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Rotation"
+anims/Explosion = ExtResource( 4 )
+anims/Rotation = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Stats" type="Node" parent="."]
+script = ExtResource( 7 )
+
+[node name="Area" type="Area" parent="." groups=[
+"Enemy",
+]]
+
+[node name="CollisionShape2" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 1 )
+[connection signal="enemy_death_signal" from="." to="." method="_on_Enemy_enemy_death_signal"]
+[connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
+[connection signal="body_entered" from="Area" to="." method="_on_enter"]

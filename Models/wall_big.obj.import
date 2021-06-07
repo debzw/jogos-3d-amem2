@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/wall_big.obj-b847078c568e7edda4af685eafb37eab.mesh"
+
+[deps]
+
+files=[ "res://.import/wall_big.obj-b847078c568e7edda4af685eafb37eab.mesh" ]
+
+source_file="res://Models/wall_big.obj"
+dest_files=[ "res://.import/wall_big.obj-b847078c568e7edda4af685eafb37eab.mesh", "res://.import/wall_big.obj-b847078c568e7edda4af685eafb37eab.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

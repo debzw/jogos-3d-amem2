@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/enemy_shooter.obj-fed220aff8d43b643453ce950776456e.mesh"
+
+[deps]
+
+files=[ "res://.import/enemy_shooter.obj-fed220aff8d43b643453ce950776456e.mesh" ]
+
+source_file="res://Models/enemy_shooter.obj"
+dest_files=[ "res://.import/enemy_shooter.obj-fed220aff8d43b643453ce950776456e.mesh", "res://.import/enemy_shooter.obj-fed220aff8d43b643453ce950776456e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

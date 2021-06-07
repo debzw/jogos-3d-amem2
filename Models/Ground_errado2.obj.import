@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Ground_errado2.obj-77abb79a4fcccbcb4cdd4bfeb833fc06.mesh"
+
+[deps]
+
+files=[ "res://.import/Ground_errado2.obj-77abb79a4fcccbcb4cdd4bfeb833fc06.mesh" ]
+
+source_file="res://Models/Ground_errado2.obj"
+dest_files=[ "res://.import/Ground_errado2.obj-77abb79a4fcccbcb4cdd4bfeb833fc06.mesh", "res://.import/Ground_errado2.obj-77abb79a4fcccbcb4cdd4bfeb833fc06.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

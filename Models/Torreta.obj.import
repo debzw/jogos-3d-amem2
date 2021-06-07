@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Torreta.obj-2cbcbe46ec387169c67e45e2dbc42fea.mesh"
+
+[deps]
+
+files=[ "res://.import/Torreta.obj-2cbcbe46ec387169c67e45e2dbc42fea.mesh" ]
+
+source_file="res://Models/Torreta.obj"
+dest_files=[ "res://.import/Torreta.obj-2cbcbe46ec387169c67e45e2dbc42fea.mesh", "res://.import/Torreta.obj-2cbcbe46ec387169c67e45e2dbc42fea.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
