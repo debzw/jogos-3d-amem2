@@ -5,7 +5,7 @@
 [ext_resource path="res://textures/marble 1/Marble_07_1K_Height.png" type="Texture" id=3]
 
 [resource]
-albedo_color = Color( 0.133333, 0.137255, 0.25098, 1 )
+albedo_color = Color( 0.188235, 0.34902, 0.45098, 1 )
 roughness_texture = ExtResource( 1 )
 normal_enabled = true
 normal_scale = 1.0

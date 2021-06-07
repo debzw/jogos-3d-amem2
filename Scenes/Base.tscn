@@ -6,7 +6,7 @@
 [ext_resource path="res://Scripts/ControlBase.gd" type="Script" id=4]
 [ext_resource path="res://textures/madeira clara 1/madeira clara 1.tres" type="Material" id=5]
 
-[sub_resource type="CapsuleShape" id=2]
+[sub_resource type="CapsuleShape" id=1]
 radius = 1.05558
 height = 1.81201
 
@@ -15,13 +15,13 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1.87408, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Area" type="Area" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1.87408, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Base" type="MeshInstance" parent="."]
 mesh = ExtResource( 3 )

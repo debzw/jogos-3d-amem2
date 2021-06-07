@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/Torreta.gd" type="Script" id=1]
 [ext_resource path="res://Models/Torreta.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://textures/madeira clara 1/madeira clara 1.tres" type="Material" id=3]
-[ext_resource path="res://textures/marble 1/azul_1.tres" type="Material" id=4]
+[ext_resource path="res://textures/marble 1/azul_2.tres" type="Material" id=4]
 [ext_resource path="res://Scenes/Bullet.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ConvexPolygonShape" id=1]
