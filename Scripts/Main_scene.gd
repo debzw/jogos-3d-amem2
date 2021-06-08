@@ -3,10 +3,9 @@ extends Spatial
 class_name Worldd
 
 onready var ray = $Selection_UI/RayCast
-onready var map = $Navigation/Map
+onready var map = $Navigation/NavigationMeshInstance2/Map
 onready var camera = $CameraUI/CameraUI2/Camera
 onready var selection_cube = $Selection_UI/MeshInstance
-onready var free_area = $Navigation/Map/Area
 onready var build_button = $Botoes/Build_mode_button
 onready var button_wave = $Botoes/ButtonWave
 onready var money_text = $Botoes/Money_text
@@ -33,7 +32,7 @@ export(Color, RGB) var red
 signal _on_world_attack_fase
 
 #UI de posicionar defesas
-func _physics_process(delta):
+func _physics_process(_delta):
 	UIBuild()
 	if Input.is_action_just_pressed("Esc"):
 		if buttonmenu.visible == false:
@@ -154,4 +153,5 @@ func _on_ButtonWave_pressed():
 
 
 func _on_Menu_pressed():
+	# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Scenes/MenuPrincipal.tscn")

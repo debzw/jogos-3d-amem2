@@ -5,8 +5,9 @@ var vida_base = 100
 #$"../Navigation/EnemySpawner/Enemy"
 onready var nav = $"../Navigation"
 
-func _process(delta):
+func _process(_delta):
 	if vida_base == 0:
+		# warning-ignore:return_value_discarded
 		get_tree().change_scene("res://Scenes/YouLost.tscn")
 	var pos = get_translation()
 	var cam = get_tree().get_root().get_camera()
@@ -44,7 +45,3 @@ func _on_enter(_body):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 #	pass
-
-
-func _on_Range_body_entered(body: Node) -> void:
-	pass # Replace with function body.

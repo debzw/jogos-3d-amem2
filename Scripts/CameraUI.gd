@@ -11,7 +11,7 @@ func _ready():
 	pass
 
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_pressed("Right_D"):
 		if rotation_degrees[1]< 360:
 			rotation_degrees[1] += 1

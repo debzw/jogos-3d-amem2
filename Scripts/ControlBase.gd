@@ -8,6 +8,6 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-func _process(delta):
+func _process(_delta):
 	life_bar.rect_size.x = int((base.vida_base * max_width)/100)
 	

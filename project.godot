@@ -10,14 +10,9 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "KinematicBody",
-"class": "EnemyExplosive",
+"class": "Enemy",
 "language": "GDScript",
 "path": "res://Scripts/Enemy.gd"
-}, {
-"base": "KinematicBody",
-"class": "EnemyShooter",
-"language": "GDScript",
-"path": "res://Scripts/EnemyShooter.gd"
 }, {
 "base": "Node",
 "class": "Wave",
@@ -30,8 +25,7 @@ _global_script_classes=[ {
 "path": "res://Scripts/Main_scene.gd"
 } ]
 _global_script_class_icons={
-"EnemyExplosive": "",
-"EnemyShooter": "",
+"Enemy": "",
 "Wave": "",
 "Worldd": ""
 }
@@ -40,9 +34,6 @@ _global_script_class_icons={
 
 config/name="Projeto_3D_2020 "
 run/main_scene="res://Scenes/Main_scene.tscn"
-config/icon="res://Models/icon.png"
-config/macos_native_icon="res://Models/icon.png"
-config/windows_native_icon="res://Models/icon.png"
 
 [display]
 
@@ -99,3 +90,4 @@ Esc={
 [rendering]
 
 environment/default_environment="res://default_env.tres"
+quality/dynamic_fonts/use_oversampling=false

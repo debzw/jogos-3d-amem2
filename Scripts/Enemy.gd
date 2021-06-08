@@ -1,6 +1,6 @@
 extends KinematicBody
 
-class_name EnemyExplosive
+class_name Enemy
 
 onready var nav = $"../../"
 onready var go_to = $"../../../Base" 
@@ -46,7 +46,7 @@ func dead():
 		#("dead")
 
 #Seguir o path de ready
-func _physics_process(delta):
+func _physics_process(_delta):
 	if has_path == true:
 		enemy_has_path()
 	if has_path == false:
@@ -98,6 +98,7 @@ func random_path():
 			while distance_x == 0:
 				distance_x  = rand.randi_range(1, -1)
 			new_direction = Vector3 (distance_x, 0, 0)
+	# warning-ignore:return_value_discarded
 	move_and_slide(new_direction.normalized()*enemy_speed)
 		
 		
@@ -109,6 +110,7 @@ func enemy_has_path():
 		if direction.length() < 1:
 			current_node += 1
 		else:
+			# warning-ignore:return_value_discarded
 			move_and_slide(direction.normalized()*enemy_speed)
 	
 func new_path():

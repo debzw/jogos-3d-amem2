@@ -21,11 +21,13 @@ func _ready():
 	waves = $Waves.get_children()
 	connect_to_attack_fase_signals(world)
 
-func connect_to_enemy_signals(enemy: EnemyExplosive):
+func connect_to_enemy_signals(enemy: Enemy):
+	# warning-ignore:return_value_discarded
 	enemy.connect("enemy_death_signal", self, "_on_Enemy_enemy_death_signal")
 	
-func connect_to_attack_fase_signals(world: Worldd):
-	#("Rood")
+# warning-ignore:return_value_discarded
+func connect_to_attack_fase_signals(_Worldd):
+	# warning-ignore:return_value_discarded
 	world.connect("_on_world_attack_fase", self, "_on_world_attack_fase")
 	
 

@@ -10,7 +10,6 @@ export var shoot_delay = 100
 
 var collision = false
 var can_shoot = false
-var enemy_pos
 var closest_enemy 
 var distance_enemy_to_player
 
@@ -21,7 +20,7 @@ func _ready():
 	rof_timer.wait_time = shoot_delay / 1000.0
 	init_delay.wait_time = 100/1000.0
 	
-func _on_enter(_body) :#Se um inimigo entrar no range da torreta, e houver apenas um inimigo, ele será settado como o enemy
+func _on_enter(_body) :
 	if (_body.is_in_group("enemy")):
 		enemies_on_area.append(_body)
 		collision = true
@@ -61,7 +60,7 @@ func reselect_target():
 		can_shoot = true
 		collision = true	
 
-func _physics_process(delta): #Script para olhar para o inimigo
+func _physics_process(_delta): #Script para olhar para o inimigo
 	if collision:
 		var enemy_pos = Vector2 (enemy.global_transform.origin[0], enemy.global_transform.origin[2])
 		var turret_pos = Vector2 (global_transform.origin[0], global_transform.origin[2])
@@ -71,7 +70,7 @@ func _physics_process(delta): #Script para olhar para o inimigo
 		if rotation_degrees[1] != 270:
 			rotation_degrees[1] = 270
 
-func _process(delta):
+func _process(_delta):
 	shoot()
 	#(can_shoot)
 
@@ -87,9 +86,9 @@ func shoot():
 			rof_timer.start() 
 	elif enemies_on_area.size() == 0:
 		rof_timer.stop() 
-		can_shoot == false
-
-func _on_Timer_timeout(): #Loopa com a função acima até que outra função defina can_shoot como falso
+		can_shoot = false
+		
+func _on_Timer_timeout(): 
 	#rof_timer.stop() 
 	can_shoot = true
 
