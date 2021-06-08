@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Projeto_3D_2020 "
-run/main_scene="res://Scenes/Main_scene.tscn"
+run/main_scene="res://Scenes/MenuPrincipal.tscn"
 
 [display]
 

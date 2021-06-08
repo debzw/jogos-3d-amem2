@@ -29,7 +29,7 @@ signal enemy_death_signal
 #Pegar o path
 func _ready():
 	enemy_pos = Vector2 (self.global_transform.origin[0], self.global_transform.origin[2])
-	print(enemy_pos)
+	#print(enemy_pos)
 	path = nav.get_simple_path(global_transform.origin, go_to.global_transform.origin)  
 	var delay  = rand.randf_range(2.0, 3.0)
 	timer.set_wait_time(delay)
@@ -38,7 +38,7 @@ func _ready():
 #sumir ao cdar dano da torre central
 func dead():
 	if is_alive == true:
-		is_alive = false
+		is_alive = false 
 		$AnimationPlayer.play("Explosion")
 		yield($AnimationPlayer, "animation_finished")
 		emit_signal("enemy_death_signal")
@@ -117,12 +117,17 @@ func new_path():
 	path = nav.get_simple_path(global_transform.origin, go_to.global_transform.origin)
 	
 func _on_Timer_timeout():
+	var delay
 	if has_path == true:
 		has_path = false
+		rand.randomize()
+		print ("has path")
+		delay  = rand.randf_range(1.0, 2.0)
 	elif has_path == false:
 		has_path = true
-	rand.randomize()
-	var delay  = rand.randf_range(2.0, 3.0)
+		print ("hasNOT path")
+		rand.randomize()
+		delay  = rand.randf_range(4.0, 6.0)
 	timer.set_wait_time(delay)
 	timer.start()
 

@@ -93,13 +93,13 @@ func _build_torreta(ID):
 				var tower = torreta.instance()
 				tower.translation = selection_position
 				$Container.add_child(tower)
-		1:
-			if money >= 50 :
-				money -=50
-				money_text.text = str(money)
-				var tower = artilharia.instance()
-				tower.translation = selection_position
-				$Container.add_child(tower)
+		#1:
+			#if money >= 50 :
+			#	money -=50
+			#	money_text.text = str(money)
+			#	var tower = artilharia.instance()
+			#	tower.translation = selection_position
+			#	$Container.add_child(tower)
 
 	clear_menu_container()
 		
