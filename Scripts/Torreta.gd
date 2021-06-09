@@ -92,7 +92,7 @@ func _on_Timer_timeout():
 	#rof_timer.stop() 
 	can_shoot = true
 
-func _on_Initial_shoot_delay_timeout(): #Delay para o primeiro tiro não ser disparado antes de a torreta olhar para o alvo
+func _on_Initial_shoot_delay_timeout(): #Delaypara o primeiro tiro não ser disparado antes de a torreta olhar para o alvo
 	if enemies_on_area.size() > 0:
 		can_shoot = true
 		init_delay.stop()

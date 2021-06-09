@@ -25,7 +25,7 @@ var torreta_quant = 0
 
 var collision_area = false
 var build_menu = true
-var money = 100
+var money = 1000
 
 export(Color, RGB) var blue
 export(Color, RGB) var red
@@ -95,6 +95,10 @@ func _build_torreta(ID):
 				tower.translation = selection_position
 				$Container.add_child(tower)
 				torreta_quant += 1
+				#direita em cima
+				#var space = notbuild.instance()
+				#space.translation = Vector3(selection_position[0] + 2.5, selection_position[1], selection_position[2] + 2.5)
+				#$Container.add_child(space)
 		#1:
 			#if money >= 50 :
 			#	money -=50
@@ -106,6 +110,15 @@ func _build_torreta(ID):
 	clear_menu_container()
 		
 	map.set_cell_item(point.x, point.y, point.z, 15)
+	#pedreiragem p n poder colocar uma torreta do lado da outra
+	map.set_cell_item(point.x+1, point.y, point.z+1, 15)
+	map.set_cell_item(point.x-1, point.y, point.z+1, 15)
+	map.set_cell_item(point.x+1, point.y, point.z-1, 15)
+	map.set_cell_item(point.x-1, point.y, point.z-1, 15)
+	map.set_cell_item(point.x, point.y, point.z+1, 15)
+	map.set_cell_item(point.x, point.y, point.z-1, 15)
+	map.set_cell_item(point.x+1, point.y, point.z, 15)
+	map.set_cell_item(point.x-1, point.y, point.z, 15)
 	in_menu = false
 
 #Limpar a caixa de menu
