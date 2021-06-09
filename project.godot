@@ -32,7 +32,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Projeto_3D_2020 "
+config/name="My_game"
 run/main_scene="res://Scenes/MenuPrincipal.tscn"
 config/icon="res://Models/icon.png"
 config/windows_native_icon="res://Models/icon.ico"
@@ -91,5 +91,7 @@ Esc={
 
 [rendering]
 
+quality/filters/anisotropic_filter_level=6
+quality/filters/msaa=1
 environment/default_environment="res://default_env.tres"
 quality/dynamic_fonts/use_oversampling=false

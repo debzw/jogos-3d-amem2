@@ -21,6 +21,7 @@ var mouse_pos
 var point
 var selection_position
 var ray_length = 2000
+var torreta_quant = 0
 
 var collision_area = false
 var build_menu = true
@@ -93,6 +94,7 @@ func _build_torreta(ID):
 				var tower = torreta.instance()
 				tower.translation = selection_position
 				$Container.add_child(tower)
+				torreta_quant += 1
 		#1:
 			#if money >= 50 :
 			#	money -=50

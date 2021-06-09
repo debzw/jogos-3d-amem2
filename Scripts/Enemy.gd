@@ -6,6 +6,7 @@ onready var nav = $"../../"
 onready var go_to = $"../../../Base" 
 onready var timer = $Timer
 onready var spawner = $"../"
+onready var world = $"../../../"
 
 var path = []
 var current_node = 0
@@ -19,8 +20,8 @@ var distance_x
 var base_pos 
 var enemy_pos
 
-export var enemy_speed = 5
-export var life = 100
+onready var enemy_speed = 2 + ( 1 * world.torreta_quant) 
+export var life = 80
 
 signal enemy_death_signal
 
@@ -121,11 +122,9 @@ func _on_Timer_timeout():
 	if has_path == true:
 		has_path = false
 		rand.randomize()
-		print ("has path")
 		delay  = rand.randf_range(1.0, 2.0)
 	elif has_path == false:
 		has_path = true
-		print ("hasNOT path")
 		rand.randomize()
 		delay  = rand.randf_range(4.0, 6.0)
 	timer.set_wait_time(delay)

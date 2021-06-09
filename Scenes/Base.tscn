@@ -7,14 +7,14 @@
 [ext_resource path="res://textures/madeira clara 1/madeira clara 1.tres" type="Material" id=5]
 
 [sub_resource type="CapsuleShape" id=1]
-radius = 1.05558
+radius = 1.07792
 height = 1.81201
 
 [node name="Base" type="StaticBody"]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1.87408, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.87408, 0 )
 shape = SubResource( 1 )
 
 [node name="Area" type="Area" parent="."]
