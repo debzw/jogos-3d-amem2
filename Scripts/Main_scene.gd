@@ -25,7 +25,7 @@ var torreta_quant = 0
 
 var collision_area = false
 var build_menu = true
-var money = 1000
+var money = 100
 
 export(Color, RGB) var blue
 export(Color, RGB) var red
