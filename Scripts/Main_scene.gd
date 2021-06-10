@@ -64,8 +64,8 @@ func UIBuild():
 			ray.force_raycast_update()
 			#collision point translated into gridmap coordinate
 			point = map.world_to_map(ray.get_collision_point())
-			var tile = map.get_cell_item(point.x, point.y, point.z)
-			print(point)
+			var tile = map.get_cell_item(point.x, 0, point.z)
+			#print(point)
 			
 			#Definir cor e disponibilidade da tile
 			if tile == -1 and point.x > -11 and point.x < 10 and point.z > -11 and point.z < 10:
@@ -77,7 +77,7 @@ func UIBuild():
 				selection_cube.get_surface_material(0).set_shader_param("current_color", red)
 				can_build = false
 			#Move Selection box
-			selection_position = map.map_to_world(point.x, point.y, point.z)
+			selection_position = map.map_to_world(point.x, 0, point.z)
 			selection_cube.translation = selection_position
 			
 		if Input.is_action_just_pressed("Right_click") and can_build:
