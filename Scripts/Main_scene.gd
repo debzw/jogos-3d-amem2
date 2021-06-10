@@ -32,6 +32,12 @@ export(Color, RGB) var red
 
 signal _on_world_attack_fase
 
+func _ready():
+	map.set_cell_item(-1, 0, -1, 15)
+	map.set_cell_item(0, 0, -1, 15)
+	map.set_cell_item(-1, 0, 0, 15)
+	map.set_cell_item(0, 0, 0, 15)
+
 #UI de posicionar defesas
 func _physics_process(_delta):
 	UIBuild()
@@ -59,7 +65,7 @@ func UIBuild():
 			#collision point translated into gridmap coordinate
 			point = map.world_to_map(ray.get_collision_point())
 			var tile = map.get_cell_item(point.x, point.y, point.z)
-			#print(point)
+			print(point)
 			
 			#Definir cor e disponibilidade da tile
 			if tile == -1 and point.x > -11 and point.x < 10 and point.z > -11 and point.z < 10:
