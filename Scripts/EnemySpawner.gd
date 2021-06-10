@@ -4,12 +4,13 @@ onready var timer = $Timer
 onready var waves_node = $Waves
 onready var world = $"../../"
 onready var button_wave = $"../../Botoes/ButtonWave"
+onready var turn = $"../../Botoes/Turn"
 
 var enemies_not_spawned
 var enemies_killed_this_wave
 
 var waves
-var current_wave_num = -1
+var current_wave_num = 0
 var random_side 
 var x
 var z
@@ -41,6 +42,7 @@ func start_wave():
 	random_wave._rand_wave()
 	enemies_killed_this_wave = 0
 	current_wave_num += 1
+	turn.text = str(current_wave_num)
 	enemies_not_spawned = random_wave.current_enemy_count
 	timer.wait_time = random_wave.spawn_delay
 	timer.start()

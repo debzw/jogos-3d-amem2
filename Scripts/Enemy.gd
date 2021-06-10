@@ -52,6 +52,8 @@ func _physics_process(_delta):
 		enemy_has_path()
 	if has_path == false:
 		random_path()
+	if enemy_speed > 7:
+		enemy_speed = 8
 
 func _on_enter(_body):
 	if (_body.is_in_group("Base")):

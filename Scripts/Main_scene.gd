@@ -59,9 +59,10 @@ func UIBuild():
 			#collision point translated into gridmap coordinate
 			point = map.world_to_map(ray.get_collision_point())
 			var tile = map.get_cell_item(point.x, point.y, point.z)
+			#print(point)
 			
 			#Definir cor e disponibilidade da tile
-			if tile == -1 and point.x > -10 and point.x < 10 and point.z > -10 and point.z < 10:
+			if tile == -1 and point.x > -11 and point.x < 10 and point.z > -11 and point.z < 10:
 				selection_cube.get_surface_material(0).set_shader_param("current_color", blue)
 				can_build = true
 				#if point.x > -11 and point.x < 11 and point.y > -11 and point.y < 11:
@@ -95,6 +96,16 @@ func _build_torreta(ID):
 				tower.translation = selection_position
 				$Container.add_child(tower)
 				torreta_quant += 1
+				map.set_cell_item(point.x, point.y, point.z, 15)
+	#pedreiragem p n poder colocar uma torreta do lado da outra
+				map.set_cell_item(point.x+1, point.y, point.z+1, 15)
+				map.set_cell_item(point.x-1, point.y, point.z+1, 15)
+				map.set_cell_item(point.x+1, point.y, point.z-1, 15)
+				map.set_cell_item(point.x-1, point.y, point.z-1, 15)
+				map.set_cell_item(point.x, point.y, point.z+1, 15)
+				map.set_cell_item(point.x, point.y, point.z-1, 15)
+				map.set_cell_item(point.x+1, point.y, point.z, 15)
+				map.set_cell_item(point.x-1, point.y, point.z, 15)
 				#direita em cima
 				#var space = notbuild.instance()
 				#space.translation = Vector3(selection_position[0] + 2.5, selection_position[1], selection_position[2] + 2.5)
@@ -109,16 +120,7 @@ func _build_torreta(ID):
 
 	clear_menu_container()
 		
-	map.set_cell_item(point.x, point.y, point.z, 15)
-	#pedreiragem p n poder colocar uma torreta do lado da outra
-	map.set_cell_item(point.x+1, point.y, point.z+1, 15)
-	map.set_cell_item(point.x-1, point.y, point.z+1, 15)
-	map.set_cell_item(point.x+1, point.y, point.z-1, 15)
-	map.set_cell_item(point.x-1, point.y, point.z-1, 15)
-	map.set_cell_item(point.x, point.y, point.z+1, 15)
-	map.set_cell_item(point.x, point.y, point.z-1, 15)
-	map.set_cell_item(point.x+1, point.y, point.z, 15)
-	map.set_cell_item(point.x-1, point.y, point.z, 15)
+	
 	in_menu = false
 
 #Limpar a caixa de menu
